@@ -1,5 +1,5 @@
 :root {
-  --bg: #E8E1D8;
+  --bg: #EDE4D9;
   --text: #1b1612;
   --muted: rgba(27, 22, 18, 0.56);
   --border: rgba(27, 22, 18, 0.08);
@@ -368,7 +368,7 @@ body {
 .collections-section {
   padding: 40px 48px 80px;
   min-height: auto;
-  background: #EDE4D9;
+  background: var(--bg);
 }
 
 .collections-inner {
@@ -815,7 +815,7 @@ body {
   scroll-margin-top: 0px;
   padding: 100px 48px 120px;
   min-height: auto;
-  background: #E3DBD1;
+  background: var(--bg);
 }
 
 .services-inner {
@@ -926,15 +926,7 @@ body {
   padding: 80px 48px 100px;
   min-height: 100vh;
   position: relative;
-  background: url("../assets/images/background.png") center center / cover no-repeat;
-}
-
-.pricing-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(232, 225, 216, 0.95) 0%, rgba(232, 225, 216, 0.7) 30%, rgba(232, 225, 216, 0.7) 70%, rgba(232, 225, 216, 0.95) 100%);
-  z-index: 0;
+  background: var(--bg);
 }
 
 .pricing-inner {
@@ -1278,7 +1270,7 @@ body {
 .enquiries-section {
   min-height: auto;
   padding: 100px 48px 120px;
-  background: #DDD4C9;
+  background: var(--bg);
 }
 
 .enquiries-inner {
