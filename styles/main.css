@@ -517,11 +517,12 @@ body {
 
 @media (max-width: 720px) {
   .scroll-section {
-    min-height: 140svh;
+    min-height: 100svh;
+    height: 100svh;
   }
 
   .canvas-stage {
-    height: 140svh;
+    height: 100svh;
   }
 
   .canvas-frame {
@@ -550,6 +551,7 @@ body {
 
   .content-section {
     padding: 48px 20px 56px;
+    min-height: auto;
     align-items: flex-start;
   }
 
