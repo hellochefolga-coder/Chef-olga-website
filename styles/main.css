@@ -500,6 +500,16 @@ body {
     height: 220vh;
   }
 
+  .canvas-frame {
+    height: 100svh;
+    min-height: 100svh;
+  }
+
+  #sequence-canvas {
+    width: 100%;
+    height: 100%;
+  }
+
   .brand-mark {
     top: 20px;
     left: 50%;
@@ -515,13 +525,13 @@ body {
   }
 
   .content-section {
-    padding: 56px 20px;
+    padding: 48px 20px 56px;
     align-items: flex-start;
   }
 
   .about-layout {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 24px;
   }
 
   .about-copy {
@@ -676,7 +686,9 @@ body {
 
   .pricing-grid {
     grid-template-columns: 1fr;
-    max-width: 340px;
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .enquiries-section {

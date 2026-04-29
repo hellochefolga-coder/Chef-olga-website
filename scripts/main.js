@@ -159,40 +159,44 @@ function requestRenderForSequence(sequence) {
 }
 
 function preloadSequence(sequence) {
+  const BATCH_SIZE = 10;
+  const BATCH_DELAY = 80;
   let loadedCount = 0;
 
-  for (let index = 0; index < sequence.frameCount; index += 1) {
-    const image = new Image();
+  function loadBatch(startIndex) {
+    const end = Math.min(startIndex + BATCH_SIZE, sequence.frameCount);
+    for (let index = startIndex; index < end; index += 1) {
+      const image = new Image();
 
-    image.onload = () => {
-      sequence.loadedImages[index] = image;
-      loadedCount += 1;
+      image.onload = () => {
+        sequence.loadedImages[index] = image;
+        loadedCount += 1;
 
-      if (sequence.statusElement) {
-        sequence.statusElement.textContent = `Cargando... ${loadedCount}/${sequence.frameCount}`;
-      }
-
-      if (loadedCount === 1 || index === 0) {
-        resizeSequence(sequence);
-      }
-
-      if (loadedCount === sequence.frameCount) {
-        if (sequence.statusElement) {
-          sequence.statusElement.textContent = '';
+        if (index === 0) {
+          resizeSequence(sequence);
+          if (sequence.statusElement) {
+            sequence.statusElement.textContent = '';
+          }
         }
 
-        requestRenderForSequence(sequence);
-      }
-    };
+        if (loadedCount === sequence.frameCount) {
+          requestRenderForSequence(sequence);
+        }
+      };
 
-    image.onerror = () => {
-      if (sequence.statusElement) {
-        sequence.statusElement.textContent = 'Faltan los frames de la secuencia.';
-      }
-    };
+      image.onerror = () => {
+        loadedCount += 1;
+      };
 
-    image.src = getFrameSource(sequence.framePath, index);
+      image.src = getFrameSource(sequence.framePath, index);
+    }
+
+    if (end < sequence.frameCount) {
+      setTimeout(() => loadBatch(end), BATCH_DELAY);
+    }
   }
+
+  loadBatch(0);
 }
 
 sequences.forEach((sequence) => {
