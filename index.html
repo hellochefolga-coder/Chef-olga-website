@@ -41,13 +41,15 @@
       </div>
     </nav>
     <main class="animation-page">
-      <section class="scroll-section" aria-label="Animación frame por frame de Chef Olga">
+      <section class="scroll-section" aria-label="Animación de Chef Olga">
         <div class="canvas-stage">
           <div class="canvas-frame">
             <div class="brand-mark">Chef Olga</div>
-            <canvas id="sequence-canvas" aria-label="Animación de producto Chef Olga"></canvas>
+            <video id="sequence-video" muted playsinline preload="auto" aria-hidden="true">
+              <source src="assets/video/sequence.webm" type="video/webm">
+              <source src="assets/video/sequence.mp4" type="video/mp4">
+            </video>
             <p class="scroll-hint">Slide</p>
-            <p class="sequence-status" id="sequence-status">Cargando...</p>
           </div>
         </div>
       </section>
@@ -70,8 +72,10 @@
 
             <div class="chef-olga-sequence">
               <div class="chef-olga-sequence-frame">
-                <canvas id="chef-olga-canvas" aria-label="Chef Olga"></canvas>
-                <p class="chef-olga-sequence-status" id="chef-olga-status">Cargando...</p>
+                <video id="chef-olga-video" muted playsinline preload="auto" aria-hidden="true">
+                  <source src="assets/video/chef-olga.webm" type="video/webm">
+                  <source src="assets/video/chef-olga.mp4" type="video/mp4">
+                </video>
               </div>
               <a class="about-instagram" href="https://www.instagram.com/olgasgrazingboards" target="_blank" rel="noopener noreferrer">@olgasgrazingboards</a>
             </div>
