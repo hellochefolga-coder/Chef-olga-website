@@ -165,9 +165,11 @@ body {
 
 .brand-mark {
   font-size: clamp(2.4rem, 4.5vw, 4rem);
-  font-weight: 700;
-  letter-spacing: 0.04em;
+  font-weight: 500;
+  letter-spacing: 0.02em;
   margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  color: #f4eee4;
 }
 
 .scroll-section {
@@ -192,7 +194,7 @@ body {
   display: grid;
   place-items: center;
   overflow: hidden;
-  background: var(--bg);
+  background: #1a1410;
 }
 
 #sequence-canvas {
@@ -228,7 +230,7 @@ body {
 
 .scroll-hint {
   bottom: 34px;
-  color: var(--text);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .sequence-status {

@@ -30,7 +30,7 @@
   });
 })();
 
-// ── Sequence canvas (table animation — 40 frames) ─────────────────────────────
+// ── Sequence canvas (table animation — 40 frames, smooth lerp) ────────────────
 (function () {
   const canvas = document.getElementById('sequence-canvas');
   const section = document.querySelector('.scroll-section');
@@ -39,9 +39,10 @@
   const ctx = canvas.getContext('2d');
   const FRAME_COUNT = 40;
   const images = new Array(FRAME_COUNT);
-  let loaded = 0;
-  let currentFrame = 0;
-  let ticking = false;
+  let allLoaded = false;
+  let targetFrame = 0;
+  let displayFrame = 0;
+  let rafId = null;
 
   function resize() {
     const pr = window.devicePixelRatio || 1;
@@ -51,12 +52,12 @@
     canvas.style.width = width + 'px';
     canvas.style.height = height + 'px';
     ctx.setTransform(pr, 0, 0, pr, 0, 0);
-    draw(currentFrame);
+    draw(Math.round(displayFrame));
   }
 
   function draw(index) {
     const img = images[index];
-    if (!img || !img.complete || !img.naturalWidth) return;
+    if (!img) return;
     const pr = window.devicePixelRatio || 1;
     const dw = canvas.width / pr;
     const dh = canvas.height / pr;
@@ -70,31 +71,51 @@
     ctx.drawImage(img, x, y, w, h);
   }
 
-  function getProgress() {
+  function getTargetFrame() {
     const rect = section.getBoundingClientRect();
     const scrollable = Math.max(1, section.offsetHeight - window.innerHeight);
-    return Math.min(1, Math.max(0, -rect.top / scrollable));
+    const progress = Math.min(1, Math.max(0, -rect.top / scrollable));
+    return progress * (FRAME_COUNT - 1);
+  }
+
+  function tick() {
+    targetFrame = getTargetFrame();
+    // Smooth lerp toward target — feels buttery at any scroll speed
+    displayFrame += (targetFrame - displayFrame) * 0.18;
+    const idx = Math.round(displayFrame);
+    draw(idx);
+    if (Math.abs(targetFrame - displayFrame) > 0.01) {
+      rafId = requestAnimationFrame(tick);
+    } else {
+      displayFrame = targetFrame;
+      draw(Math.round(displayFrame));
+      rafId = null;
+    }
   }
 
   function onScroll() {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(() => {
-      const frame = Math.min(FRAME_COUNT - 1, Math.round(getProgress() * (FRAME_COUNT - 1)));
-      if (frame !== currentFrame) { currentFrame = frame; draw(currentFrame); }
-      ticking = false;
-    });
+    if (!allLoaded) return;
+    if (rafId === null) rafId = requestAnimationFrame(tick);
   }
 
-  for (let i = 0; i < FRAME_COUNT; i++) {
-    const img = new Image();
-    img.onload = () => {
+  // Preload + decode all frames in parallel for instant scroll response
+  Promise.all(
+    Array.from({ length: FRAME_COUNT }, (_, i) => {
+      const img = new Image();
+      img.src = `assets/frames/sequence-opt/frame_${String(i + 1).padStart(4, '0')}.jpg`;
       images[i] = img;
-      loaded++;
-      if (i === 0) { resize(); }
-    };
-    img.src = `assets/frames/sequence-opt/frame_${String(i + 1).padStart(4, '0')}.jpg`;
-  }
+      return (img.decode ? img.decode() : new Promise(r => { img.onload = r; img.onerror = r; }))
+        .catch(() => {});
+    })
+  ).then(() => {
+    allLoaded = true;
+    resize();
+  });
+
+  // Show first frame ASAP even before all loaded
+  images[0] = new Image();
+  images[0].onload = () => resize();
+  images[0].src = 'assets/frames/sequence-opt/frame_0001.jpg';
 
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', resize);
