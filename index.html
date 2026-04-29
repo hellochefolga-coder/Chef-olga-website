@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chef Olga</title>
+    <meta
+      name="description"
+      content="Chef Olga"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-menu" id="nav-menu" aria-hidden="true">
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#pricing" class="nav-link">Pricing</a></li>
+          <li><a href="#enquiries" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-social">
+          <a href="https://www.instagram.com/olgasgrazingboards" target="_blank" rel="noopener noreferrer" class="nav-instagram" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+            <span>@olgasgrazingboards</span>
+          </a>
+          <a href="tel:+447460725391" class="nav-phone" aria-label="Call now">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.95a16 16 0 0 0 6.29 6.29l.95-.85a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>+44 7460 725391</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <main class="animation-page">
+      <section class="scroll-section" aria-label="Animación frame por frame de Chef Olga">
+        <div class="canvas-stage">
+          <div class="canvas-frame">
+            <div class="brand-mark">Chef Olga</div>
+            <canvas id="sequence-canvas" aria-label="Animación de producto Chef Olga"></canvas>
+            <p class="scroll-hint">Slide</p>
+            <p class="sequence-status" id="sequence-status">Cargando...</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section intro-copy" id="about" aria-label="Presentación de Chef Olga">
+        <div class="content-inner">
+          <div class="about-layout">
+            <div class="about-copy">
+              <p class="section-kicker">FROM AMALFI COAST, ITALY · SERVING LONDON, UK</p>
+              <h1 class="content-title">Chef Olga</h1>
+              <div class="content-columns">
+                <p>
+                  I craft bespoke charcuterie boards and grazing tables that transform any gathering into a sensory experience. Drawing on my Amalfi Coast heritage, I curate abundant spreads of hand selected Mediterranean meats, artisanal cheeses, seasonal fruits, and handcrafted accompaniments, each board a landscape of colour, flavour, and texture.
+                </p>
+                <p>
+                  From intimate dinner parties to grand wedding receptions and corporate events, my boards are designed not just to be eaten, but to be felt. A centrepiece that starts conversations and creates memories.
+                </p>
+              </div>
+            </div>
+
+            <div class="chef-olga-sequence">
+              <div class="chef-olga-sequence-frame">
+                <canvas id="chef-olga-canvas" aria-label="Chef Olga"></canvas>
+                <p class="chef-olga-sequence-status" id="chef-olga-status">Cargando...</p>
+              </div>
+              <a class="about-instagram" href="https://www.instagram.com/olgasgrazingboards" target="_blank" rel="noopener noreferrer">@olgasgrazingboards</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section closing-copy" id="philosophy" aria-label="Filosofía de Chef Olga">
+        <div class="content-inner content-inner-narrow">
+          <p class="closing-statement wobble-text" data-text="Every ingredient is sourced with intention. Every arrangement is composed with artistry.">
+            Every ingredient is sourced with intention. Every arrangement is composed with artistry.
+          </p>
+        </div>
+      </section>
+
+      <section class="content-section collections-section" id="collections" aria-label="Artful Charcuterie">
+        <div class="content-inner collections-inner">
+          <h2 class="collections-title">Artful Charcuterie</h2>
+          <div class="collections-grid">
+            <div class="collection-card">
+              <div class="collection-image">
+                <img src="assets/images/photo_1.jpg" alt="Mediterranean Signature board" loading="lazy">
+              </div>
+              <p class="collection-label">Mediterranean Signature</p>
+            </div>
+            <div class="collection-card">
+              <div class="collection-image">
+                <img src="assets/images/photo_2.jpg" alt="Spanish Collection board" loading="lazy">
+              </div>
+              <p class="collection-label">Spanish Collection</p>
+            </div>
+            <div class="collection-card">
+              <div class="collection-image">
+                <img src="assets/images/photo_3.jpg" alt="Charcuterie Cones & Cups" loading="lazy">
+              </div>
+              <p class="collection-label">Charcuterie Cones & Cups</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section services-section" id="services" aria-label="Services">
+        <div class="content-inner services-inner">
+          <p class="services-kicker">ARTISAN GRAZING & EVENT CATERING</p>
+          <h2 class="services-title">Services</h2>
+          <ol class="services-list">
+            <li class="services-list-item" data-service="Grand Grazing Table">
+              <span class="services-num">01</span>
+              <span class="services-name">Grand Grazing Tables</span>
+              <span class="services-arrow">→</span>
+            </li>
+            <li class="services-list-item" data-service="Wedding Catering">
+              <span class="services-num">02</span>
+              <span class="services-name">Wedding Celebrations</span>
+              <span class="services-arrow">→</span>
+            </li>
+            <li class="services-list-item" data-service="Bridal or Baby Shower Catering">
+              <span class="services-num">03</span>
+              <span class="services-name">Bridal & Baby Showers</span>
+              <span class="services-arrow">→</span>
+            </li>
+            <li class="services-list-item" data-service="Corporate Event Catering">
+              <span class="services-num">04</span>
+              <span class="services-name">Corporate Events</span>
+              <span class="services-arrow">→</span>
+            </li>
+            <li class="services-list-item" data-service="Cocktail Reception Grazing">
+              <span class="services-num">05</span>
+              <span class="services-name">Cocktail Receptions</span>
+              <span class="services-arrow">→</span>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="content-section pricing-section" id="pricing" aria-label="Boards and Pricing">
+        <div class="content-inner pricing-inner">
+          <p class="pricing-kicker">CURATED WITH ARTISTRY</p>
+          <h2 class="pricing-title">Boards & Pricing</h2>
+          <p class="pricing-subtitle">Thoughtfully designed boards and grazing tables, crafted with the finest ingredients and presented with style.</p>
+          
+          <div class="pricing-grid">
+            <div class="pricing-card pricing-card-shape-board">
+              <div class="board-handle" aria-hidden="true"></div>
+              <p class="pricing-card-badge">MOST POPULAR</p>
+              <h3 class="pricing-card-name">Mediterranean Grazing Board</h3>
+              <svg class="pricing-card-flourish" viewBox="0 0 80 14" aria-hidden="true">
+                <path d="M 4 7 H 30" stroke="currentColor" stroke-width="0.6" fill="none" stroke-linecap="round"/>
+                <path d="M 50 7 H 76" stroke="currentColor" stroke-width="0.6" fill="none" stroke-linecap="round"/>
+                <path d="M 40 2 C 36 4, 36 10, 40 12 C 44 10, 44 4, 40 2 Z" fill="currentColor" opacity="0.85"/>
+                <path d="M 36 7 H 44" stroke="currentColor" stroke-width="0.4"/>
+              </svg>
+              <p class="pricing-card-price">From £350</p>
+              <ul class="pricing-card-features">
+                <li>2 extra large boards</li>
+                <li>Cured meats & Italian prosciutto</li>
+                <li>Regional cheeses & Greek olives</li>
+                <li>Seasonal fruits & artisan bread</li>
+                <li>Honey, nuts & edible flower styling</li>
+              </ul>
+              <button class="pricing-card-cta" data-service="Mediterranean Grazing Board"><span>ENQUIRE</span></button>
+            </div>
+
+            <div class="pricing-card pricing-card-shape-board">
+              <div class="board-handle" aria-hidden="true"></div>
+              <p class="pricing-card-badge pricing-badge-outline">BOLD & RICH</p>
+              <h3 class="pricing-card-name">Italian Collection</h3>
+              <svg class="pricing-card-flourish" viewBox="0 0 80 14" aria-hidden="true">
+                <path d="M 4 7 H 30" stroke="currentColor" stroke-width="0.6" fill="none" stroke-linecap="round"/>
+                <path d="M 50 7 H 76" stroke="currentColor" stroke-width="0.6" fill="none" stroke-linecap="round"/>
+                <path d="M 40 2 C 36 4, 36 10, 40 12 C 44 10, 44 4, 40 2 Z" fill="currentColor" opacity="0.85"/>
+                <path d="M 36 7 H 44" stroke="currentColor" stroke-width="0.4"/>
+              </svg>
+              <p class="pricing-card-price">From £400</p>
+              <ul class="pricing-card-features">
+                <li>Italian cheeses & prosciutto</li>
+                <li>Cured meats & marinated olives</li>
+                <li>Antipasti & rustic breads</li>
+                <li>Nuts, seasonal fruits & honey</li>
+                <li>Signature artistic styling</li>
+              </ul>
+              <button class="pricing-card-cta" data-service="Italian Collection"><span>ENQUIRE</span></button>
+            </div>
+
+            <div class="pricing-card pricing-card-shape-board pricing-card-dark">
+              <div class="board-handle" aria-hidden="true"></div>
+              <p class="pricing-card-badge pricing-badge-gold">CUSTOM EVENT</p>
+              <h3 class="pricing-card-name">Tailor Cut Catering</h3>
+              <svg class="pricing-card-flourish" viewBox="0 0 80 14" aria-hidden="true">
+                <path d="M 4 7 H 30" stroke="currentColor" stroke-width="0.6" fill="none" stroke-linecap="round"/>
+                <path d="M 50 7 H 76" stroke="currentColor" stroke-width="0.6" fill="none" stroke-linecap="round"/>
+                <path d="M 40 2 C 36 4, 36 10, 40 12 C 44 10, 44 4, 40 2 Z" fill="currentColor" opacity="0.85"/>
+                <path d="M 36 7 H 44" stroke="currentColor" stroke-width="0.4"/>
+              </svg>
+              <p class="pricing-card-price">From £25 pp</p>
+              <ul class="pricing-card-features pricing-features-light">
+                <li>Choice of 6 savoury items</li>
+                <li>Choice of 2 sweet items</li>
+                <li>Includes fruit platter</li>
+                <li>Grazing cones per person</li>
+                <li>Upgrade £30pp for 8 savoury & 4 sweet</li>
+              </ul>
+              <button class="pricing-card-cta pricing-cta-outline" data-service="Tailor Cut Catering"><span>ENQUIRE</span></button>
+            </div>
+
+            <div class="pricing-card pricing-card-shape-board">
+              <div class="board-handle" aria-hidden="true"></div>
+              <p class="pricing-card-badge">STATEMENT PIECE</p>
+              <h3 class="pricing-card-name">Grand Grazing Table</h3>
+              <svg class="pricing-card-flourish" viewBox="0 0 80 14" aria-hidden="true">
+                <path d="M 4 7 H 30" stroke="currentColor" stroke-width="0.6" fill="none" stroke-linecap="round"/>
+                <path d="M 50 7 H 76" stroke="currentColor" stroke-width="0.6" fill="none" stroke-linecap="round"/>
+                <path d="M 40 2 C 36 4, 36 10, 40 12 C 44 10, 44 4, 40 2 Z" fill="currentColor" opacity="0.85"/>
+                <path d="M 36 7 H 44" stroke="currentColor" stroke-width="0.4"/>
+              </svg>
+              <p class="pricing-card-price">From £800</p>
+              <ul class="pricing-card-features">
+                <li>Full multi level table setup</li>
+                <li>Abundant Mediterranean spread</li>
+                <li>Styled with botanicals & florals</li>
+                <li>Venue delivery & setup included</li>
+                <li>Cones available as add on</li>
+              </ul>
+              <button class="pricing-card-cta" data-service="Grand Grazing Table"><span>ENQUIRE</span></button>
+            </div>
+          </div>
+          
+          <p class="pricing-footer">All boards are made to order using the freshest seasonal ingredients.<br>Pricing may vary based on size, location & custom requests.</p>
+        </div>
+      </section>
+
+      <section class="content-section enquiries-section" id="enquiries" aria-label="Contact Me">
+        <div class="content-inner enquiries-inner">
+          <div class="enquiries-heading">
+            <div class="enquiries-divider"></div>
+            <h2 class="enquiries-title">Contact Me</h2>
+          </div>
+
+          <div class="enquiries-layout">
+            <div class="enquiries-gallery" aria-hidden="true">
+              <figure class="enquiries-gallery-card enquiries-gallery-card-aligned">
+                <img src="assets/images/photo_10.jpg" alt="" loading="lazy">
+              </figure>
+              <figure class="enquiries-gallery-card enquiries-gallery-card-aligned">
+                <img src="assets/images/photo_12.jpg" alt="" loading="lazy">
+              </figure>
+            </div>
+
+            <div class="enquiries-card">
+              <form class="enquiries-form" action="https://formsubmit.co/hellochefolga@gmail.com" method="post">
+                <input type="hidden" name="_subject" value="New Chef Olga enquiry">
+                <input type="hidden" name="_captcha" value="true">
+                <input type="hidden" name="_template" value="box">
+                <input type="hidden" name="_blacklist" value="http,https,www,.com,.net,.org,<a,<img,<script,viagra,casino,bitcoin,crypto,click here,free money">
+                <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+                <div class="enquiries-form-grid">
+                  <label class="enquiries-field">
+                    <span class="sr-only">Name</span>
+                    <input type="text" name="name" placeholder="Name*" required>
+                  </label>
+                  <label class="enquiries-field">
+                    <span class="sr-only">City</span>
+                    <select name="city" required>
+                      <option value="" selected disabled>City*</option>
+                      <option value="Central London">Central London</option>
+                      <option value="North London">North London</option>
+                      <option value="South London">South London</option>
+                      <option value="East London">East London</option>
+                      <option value="West London">West London</option>
+                      <option value="Greater London">Greater London</option>
+                      <option value="Outside London">Outside London</option>
+                    </select>
+                  </label>
+                  <label class="enquiries-field">
+                    <span class="sr-only">Email</span>
+                    <input type="email" name="email" placeholder="Email*" required>
+                  </label>
+                  <label class="enquiries-field">
+                    <span class="sr-only">Phone</span>
+                    <input type="tel" name="phone" placeholder="Phone*" required>
+                  </label>
+                  <label class="enquiries-field">
+                    <span class="sr-only">Service</span>
+                    <select name="service" required>
+                      <option value="" selected disabled>Desired service*</option>
+                      <option value="Grand Grazing Table">Grand Grazing Table</option>
+                      <option value="Mediterranean Grazing Board">Mediterranean Grazing Board</option>
+                      <option value="Italian Collection">Italian Collection</option>
+                      <option value="Wedding Catering">Wedding Catering</option>
+                      <option value="Bridal or Baby Shower Catering">Bridal or Baby Shower Catering</option>
+                      <option value="Corporate Event Catering">Corporate Event Catering</option>
+                      <option value="Cocktail Reception Grazing">Cocktail Reception Grazing</option>
+                      <option value="Tailor Cut Catering">Tailor Cut Catering</option>
+                    </select>
+                  </label>
+                  <label class="enquiries-field">
+                    <span class="sr-only">Guest Count</span>
+                    <select name="guest_count" required>
+                      <option value="" selected disabled>Number of guests*</option>
+                      <option value="10 to 20">10 to 20 guests</option>
+                      <option value="20 to 40">20 to 40 guests</option>
+                      <option value="40 to 60">40 to 60 guests</option>
+                      <option value="60 to 100">60 to 100 guests</option>
+                      <option value="100 to 150">100 to 150 guests</option>
+                      <option value="150+">150+ guests</option>
+                    </select>
+                  </label>
+                  <label class="enquiries-field enquiries-field-full">
+                    <span class="sr-only">Event Type</span>
+                    <select name="event_type" required>
+                      <option value="" selected disabled>Type of occasion*</option>
+                      <option value="Private Dinner">Private Dinner</option>
+                      <option value="Birthday Celebration">Birthday Celebration</option>
+                      <option value="Wedding">Wedding</option>
+                      <option value="Bridal Shower">Bridal Shower</option>
+                      <option value="Baby Shower">Baby Shower</option>
+                      <option value="Corporate Event">Corporate Event</option>
+                      <option value="Cocktail Reception">Cocktail Reception</option>
+                      <option value="Other Celebration">Other Celebration</option>
+                    </select>
+                  </label>
+                </div>
+                <label class="enquiries-field enquiries-field-message">
+                  <span class="sr-only">Message</span>
+                  <textarea name="message" placeholder="Tell me about your date, venue, style preferences or any special requests*" rows="8" required></textarea>
+                </label>
+                <button class="enquiries-submit" type="submit">Send</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <p class="footer-name">Chef Olga</p>
+          <p class="footer-tagline">Artisan Grazing & Event Catering · London</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="#about" class="footer-link">About</a>
+          <a href="#services" class="footer-link">Services</a>
+          <a href="#pricing" class="footer-link">Pricing</a>
+          <a href="#enquiries" class="footer-link">Contact</a>
+        </nav>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/olgasgrazingboards" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+            <span>@olgasgrazingboards</span>
+          </a>
+          <a href="tel:+447460725391" class="footer-social-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.95a16 16 0 0 0 6.29 6.29l.95-.85a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>+44 7460 725391</span>
+          </a>
+        </div>
+        <p class="footer-copy">&copy; 2025 Chef Olga. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
