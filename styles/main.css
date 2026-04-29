@@ -718,27 +718,24 @@ body {
   .pricing-grid {
     grid-template-columns: 1fr;
     max-width: 100%;
-    gap: 64px;
-    padding-top: 40px;
+    gap: 20px;
+    padding-top: 0;
     margin-left: 0;
     margin-right: 0;
   }
 
   .pricing-card {
-    padding: 26px 22px 30px;
+    padding: 28px 22px 30px;
     border-radius: 12px;
   }
 
   .pricing-card-shape-board {
-    padding-top: 18px;
-    border-radius: 12px 12px 14px 14px;
+    padding-top: 28px;
+    border-radius: 12px;
   }
 
   .board-handle {
-    top: -32px;
-    width: 28%;
-    height: 36px;
-    border-radius: 16px 16px 0 0;
+    display: none;
   }
 
   .pricing-card-badge {
