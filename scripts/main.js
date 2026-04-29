@@ -36,10 +36,6 @@ const videoSequences = [
     videoEl: document.getElementById('sequence-video'),
     section: document.querySelector('.scroll-section'),
   },
-  {
-    videoEl: document.getElementById('chef-olga-video'),
-    section: document.querySelector('#about'),
-  },
 ];
 
 function getScrollProgress(section) {
