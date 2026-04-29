@@ -30,50 +30,144 @@
   });
 })();
 
-// ── Video scroll scrubbing ─────────────────────────────────────────────────────
-const videoSequences = [
-  {
-    videoEl: document.getElementById('sequence-video'),
-    section: document.querySelector('.scroll-section'),
-  },
-];
+// ── Sequence canvas (table animation — 40 frames) ─────────────────────────────
+(function () {
+  const canvas = document.getElementById('sequence-canvas');
+  const section = document.querySelector('.scroll-section');
+  if (!canvas || !section) return;
 
-function getScrollProgress(section) {
-  if (!section) return 0;
-  const rect = section.getBoundingClientRect();
-  const totalScrollable = Math.max(1, section.offsetHeight - window.innerHeight);
-  const distanceScrolled = Math.min(Math.max(-rect.top, 0), totalScrollable);
-  return distanceScrolled / totalScrollable;
-}
-
-function initVideoScrub(seq) {
-  const { videoEl, section } = seq;
-  if (!videoEl || !section) return;
-
-  videoEl.pause();
-
+  const ctx = canvas.getContext('2d');
+  const FRAME_COUNT = 40;
+  const images = new Array(FRAME_COUNT);
+  let loaded = 0;
+  let currentFrame = 0;
   let ticking = false;
+
+  function resize() {
+    const pr = window.devicePixelRatio || 1;
+    const { width, height } = canvas.parentElement.getBoundingClientRect();
+    canvas.width = Math.round(width * pr);
+    canvas.height = Math.round(height * pr);
+    canvas.style.width = width + 'px';
+    canvas.style.height = height + 'px';
+    ctx.setTransform(pr, 0, 0, pr, 0, 0);
+    draw(currentFrame);
+  }
+
+  function draw(index) {
+    const img = images[index];
+    if (!img || !img.complete || !img.naturalWidth) return;
+    const pr = window.devicePixelRatio || 1;
+    const dw = canvas.width / pr;
+    const dh = canvas.height / pr;
+    const ia = img.naturalWidth / img.naturalHeight;
+    const ca = dw / dh;
+    let w, h;
+    if (ia > ca) { h = dh; w = dh * ia; } else { w = dw; h = dw / ia; }
+    const x = (dw - w) / 2;
+    const y = (dh - h) / 2;
+    ctx.clearRect(0, 0, dw, dh);
+    ctx.drawImage(img, x, y, w, h);
+  }
+
+  function getProgress() {
+    const rect = section.getBoundingClientRect();
+    const scrollable = Math.max(1, section.offsetHeight - window.innerHeight);
+    return Math.min(1, Math.max(0, -rect.top / scrollable));
+  }
 
   function onScroll() {
     if (ticking) return;
     ticking = true;
-    window.requestAnimationFrame(() => {
-      if (videoEl.readyState >= 1) {
-        const progress = getScrollProgress(section);
-        videoEl.currentTime = progress * videoEl.duration;
-      }
+    requestAnimationFrame(() => {
+      const frame = Math.min(FRAME_COUNT - 1, Math.round(getProgress() * (FRAME_COUNT - 1)));
+      if (frame !== currentFrame) { currentFrame = frame; draw(currentFrame); }
       ticking = false;
     });
   }
 
-  videoEl.addEventListener('loadedmetadata', () => {
-    videoEl.currentTime = 0;
-  });
+  for (let i = 0; i < FRAME_COUNT; i++) {
+    const img = new Image();
+    img.onload = () => {
+      images[i] = img;
+      loaded++;
+      if (i === 0) { resize(); }
+    };
+    img.src = `assets/frames/sequence-opt/frame_${String(i + 1).padStart(4, '0')}.jpg`;
+  }
 
   window.addEventListener('scroll', onScroll, { passive: true });
-}
+  window.addEventListener('resize', resize);
+  window.addEventListener('load', resize);
+})();
 
-videoSequences.forEach(initVideoScrub);
+// ── Chef Olga canvas (2 frames — toggle on scroll) ────────────────────────────
+(function () {
+  const canvas = document.getElementById('chef-olga-canvas');
+  const section = document.querySelector('#about');
+  if (!canvas || !section) return;
+
+  const ctx = canvas.getContext('2d');
+  const images = [new Image(), new Image()];
+  let loadedCount = 0;
+  let currentIndex = 0;
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+
+  function resize() {
+    const pr = window.devicePixelRatio || 1;
+    const { width, height } = canvas.parentElement.getBoundingClientRect();
+    canvas.width = Math.round(width * pr);
+    canvas.height = Math.round(height * pr);
+    canvas.style.width = width + 'px';
+    canvas.style.height = height + 'px';
+    ctx.setTransform(pr, 0, 0, pr, 0, 0);
+    draw(currentIndex);
+  }
+
+  function draw(index) {
+    const img = images[index];
+    if (!img || !img.complete || !img.naturalWidth) return;
+    const pr = window.devicePixelRatio || 1;
+    const dw = canvas.width / pr;
+    const dh = canvas.height / pr;
+    const ia = img.naturalWidth / img.naturalHeight;
+    const ca = dw / dh;
+    let w, h;
+    if (ia > ca) { h = dh; w = dh * ia; } else { w = dw; h = dw / ia; }
+    const x = (dw - w) / 2;
+    const y = (dh - h) / 2;
+    ctx.clearRect(0, 0, dw, dh);
+    ctx.drawImage(img, x, y, w, h);
+  }
+
+  function isSectionVisible() {
+    const rect = section.getBoundingClientRect();
+    return rect.top < window.innerHeight && rect.bottom > 0;
+  }
+
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      if (isSectionVisible()) {
+        const scrollingDown = window.scrollY > lastScrollY;
+        const next = scrollingDown ? 1 : 0;
+        if (next !== currentIndex) { currentIndex = next; draw(currentIndex); }
+      }
+      lastScrollY = window.scrollY;
+      ticking = false;
+    });
+  }
+
+  images[0].src = 'assets/frames/chef-olga-opt/frame_0001.jpg';
+  images[1].src = 'assets/frames/chef-olga-opt/frame_0002.jpg';
+  images.forEach(img => { img.onload = () => { loadedCount++; if (loadedCount === 1) resize(); }; });
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', resize);
+  window.addEventListener('load', resize);
+})();
 
 function initWobbleText() {
   const el = document.querySelector('.wobble-text');
