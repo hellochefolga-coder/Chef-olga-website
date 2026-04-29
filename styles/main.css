@@ -716,15 +716,30 @@ body {
   }
 
   .pricing-grid {
-    grid-template-columns: 1fr;
-    max-width: 100%;
-    gap: 20px;
-    padding-top: 0;
-    margin-left: 0;
-    margin-right: 0;
+    display: flex;
+    grid-template-columns: none;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 14px;
+    padding: 4px 14px 24px;
+    margin: 0 -14px 16px;
+    max-width: none;
+    scroll-padding: 14px;
+  }
+
+  .pricing-grid::-webkit-scrollbar {
+    display: none;
   }
 
   .pricing-card {
+    flex: 0 0 82%;
+    max-width: 320px;
+    min-width: 260px;
+    scroll-snap-align: center;
     padding: 28px 22px 30px;
     border-radius: 12px;
   }
@@ -736,6 +751,20 @@ body {
 
   .board-handle {
     display: none;
+  }
+
+  .pricing-section::after {
+    content: "← swipe →";
+    display: block;
+    text-align: center;
+    font-size: 0.7rem;
+    letter-spacing: 0.24em;
+    color: var(--muted);
+    margin-top: -8px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
   }
 
   .pricing-card-badge {
