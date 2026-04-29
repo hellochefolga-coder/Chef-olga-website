@@ -65,8 +65,9 @@
     const ca = dw / dh;
     let w, h;
     if (ia > ca) { h = dh; w = dh * ia; } else { w = dw; h = dw / ia; }
-    const x = (dw - w) / 2;
-    const y = (dh - h) / 2;
+    const isMobile = window.innerWidth <= 720;
+    const x = isMobile ? -(w * 0.07) : (dw - w) / 2;
+    const y = isMobile ? -(h - dh) * 0.85 : (dh - h) / 2;
     ctx.clearRect(0, 0, dw, dh);
     ctx.drawImage(img, x, y, w, h);
   }
@@ -102,7 +103,7 @@
   Promise.all(
     Array.from({ length: FRAME_COUNT }, (_, i) => {
       const img = new Image();
-      img.src = `assets/frames/sequence-opt/frame_${String(i + 1).padStart(4, '0')}.jpg`;
+      img.src = `assets/frames/sequence/frame_${String(i + 1).padStart(4, '0')}.webp`;
       images[i] = img;
       return (img.decode ? img.decode() : new Promise(r => { img.onload = r; img.onerror = r; }))
         .catch(() => {});
@@ -115,7 +116,7 @@
   // Show first frame ASAP even before all loaded
   images[0] = new Image();
   images[0].onload = () => resize();
-  images[0].src = 'assets/frames/sequence-opt/frame_0001.jpg';
+  images[0].src = 'assets/frames/sequence/frame_0001.webp';
 
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', resize);
@@ -156,8 +157,9 @@
     const ca = dw / dh;
     let w, h;
     if (ia > ca) { h = dh; w = dh * ia; } else { w = dw; h = dw / ia; }
-    const x = (dw - w) / 2;
-    const y = (dh - h) / 2;
+    const isMobile = window.innerWidth <= 720;
+    const x = isMobile ? -(w * 0.07) : (dw - w) / 2;
+    const y = isMobile ? -(h - dh) * 0.85 : (dh - h) / 2;
     ctx.clearRect(0, 0, dw, dh);
     ctx.drawImage(img, x, y, w, h);
   }
@@ -181,8 +183,8 @@
     });
   }
 
-  images[0].src = 'assets/frames/chef-olga-opt/frame_0001.jpg';
-  images[1].src = 'assets/frames/chef-olga-opt/frame_0002.jpg';
+  images[0].src = 'assets/frames/chef-olga/frame_0001.webp';
+  images[1].src = 'assets/frames/chef-olga/frame_0002.webp';
   images.forEach(img => { img.onload = () => { loadedCount++; if (loadedCount === 1) resize(); }; });
 
   window.addEventListener('scroll', onScroll, { passive: true });

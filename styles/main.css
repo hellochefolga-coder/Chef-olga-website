@@ -169,7 +169,7 @@ body {
   letter-spacing: 0.02em;
   margin: 0;
   font-family: "Cormorant Garamond", serif;
-  color: #f4eee4;
+  color: #1b1612;
 }
 
 .scroll-section {
@@ -194,7 +194,7 @@ body {
   display: grid;
   place-items: center;
   overflow: hidden;
-  background: #1a1410;
+  background: var(--bg);
 }
 
 #sequence-canvas {
@@ -249,11 +249,15 @@ body {
 }
 
 .content-inner {
-  width: min(1200px, 100%);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .content-inner-narrow {
-  width: min(900px, 100%);
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .about-layout {
@@ -319,7 +323,8 @@ body {
 
 .chef-olga-sequence-frame {
   position: relative;
-  width: min(420px, 85%);
+  width: 100%;
+  max-width: 420px;
   aspect-ratio: 4 / 5;
   border-radius: 0;
   background: var(--bg);
@@ -353,7 +358,9 @@ body {
 }
 
 .collections-inner {
-  width: min(1100px, 100%);
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .collections-title {
@@ -485,7 +492,8 @@ body {
   }
 
   .collections-inner {
-    width: min(900px, 100%);
+    width: 100%;
+    max-width: 900px;
   }
 
   .closing-copy {
@@ -495,11 +503,11 @@ body {
 
 @media (max-width: 720px) {
   .scroll-section {
-    min-height: 200vh;
+    min-height: 220vh;
   }
 
   .canvas-stage {
-    height: 200vh;
+    height: 220vh;
   }
 
   .canvas-frame {
@@ -555,7 +563,8 @@ body {
   }
 
   .chef-olga-sequence-frame {
-    width: min(360px, 100%);
+    width: 100%;
+    max-width: 360px;
     padding: 12px;
   }
 
@@ -732,7 +741,9 @@ body {
 }
 
 .services-inner {
-  width: min(900px, 100%);
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
   text-align: left;
 }
 
@@ -851,7 +862,9 @@ body {
 .pricing-inner {
   position: relative;
   z-index: 1;
-  width: min(1200px, 100%);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -1191,7 +1204,9 @@ body {
 }
 
 .enquiries-inner {
-  width: min(1200px, 100%);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .enquiries-heading {
