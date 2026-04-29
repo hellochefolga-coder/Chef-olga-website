@@ -171,14 +171,14 @@ body {
 }
 
 .scroll-section {
-  min-height: 180vh;
+  min-height: 250vh;
   position: relative;
   width: 100vw;
 }
 
 .canvas-stage {
   position: relative;
-  height: 180vh;
+  height: 250vh;
   width: 100vw;
 }
 
@@ -497,11 +497,11 @@ body {
 
 @media (max-width: 720px) {
   .scroll-section {
-    min-height: 150vh;
+    min-height: 200vh;
   }
 
   .canvas-stage {
-    height: 150vh;
+    height: 200vh;
   }
 
   .canvas-frame {
