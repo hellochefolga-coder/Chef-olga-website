@@ -11,6 +11,10 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  overflow-x: hidden;
+  touch-action: pan-y;
 }
 
 .sr-only {
@@ -24,6 +28,8 @@ html {
   white-space: nowrap;
   border: 0;
 }
+
+img, svg, video, canvas { max-width: 100%; }
 
 /* ── Site Nav ──────────────────────────────────────────────────────────────── */
 .site-nav {
@@ -151,16 +157,21 @@ body {
   color: var(--text);
   font-family: "Cormorant Garamond", serif;
   overflow-x: hidden;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html,
 body {
   width: 100%;
+  max-width: 100%;
 }
 
 .animation-page {
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .brand-mark {
@@ -175,20 +186,23 @@ body {
 .scroll-section {
   min-height: 250vh;
   position: relative;
-  width: 100vw;
+  width: 100%;
+  max-width: 100%;
 }
 
 .canvas-stage {
   position: relative;
   height: 250vh;
-  width: 100vw;
+  width: 100%;
+  max-width: 100%;
 }
 
 .canvas-frame {
   position: sticky;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
+  max-width: 100%;
   min-height: 100vh;
   height: 100vh;
   display: grid;
@@ -503,11 +517,11 @@ body {
 
 @media (max-width: 720px) {
   .scroll-section {
-    min-height: 220vh;
+    min-height: 140svh;
   }
 
   .canvas-stage {
-    height: 220vh;
+    height: 140svh;
   }
 
   .canvas-frame {

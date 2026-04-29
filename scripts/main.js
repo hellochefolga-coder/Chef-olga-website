@@ -1,3 +1,21 @@
+// ── Block pinch & double-tap zoom (iOS Safari ignores user-scalable=no) ──────
+(function () {
+  ['gesturestart', 'gesturechange', 'gestureend'].forEach((evt) => {
+    document.addEventListener(evt, (e) => e.preventDefault(), { passive: false });
+  });
+
+  let lastTouchEnd = 0;
+  document.addEventListener('touchend', (e) => {
+    const now = Date.now();
+    if (now - lastTouchEnd <= 320) e.preventDefault();
+    lastTouchEnd = now;
+  }, { passive: false });
+
+  document.addEventListener('touchmove', (e) => {
+    if (e.touches && e.touches.length > 1) e.preventDefault();
+  }, { passive: false });
+})();
+
 // ── Nav toggle ────────────────────────────────────────────────────────────────
 (function () {
   const toggle = document.getElementById('nav-toggle');
