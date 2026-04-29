@@ -134,7 +134,6 @@
   let loadedCount = 0;
   let currentIndex = 0;
   let lastScrollY = window.scrollY;
-  let scrollAccumulator = 0;
   let ticking = false;
 
   function resize() {
@@ -176,25 +175,56 @@
     requestAnimationFrame(() => {
       if (isSectionVisible()) {
         const delta = window.scrollY - lastScrollY;
-        scrollAccumulator += Math.abs(delta);
-        while (scrollAccumulator >= 24) {
-          currentIndex = currentIndex === 0 ? 1 : 0;
-          draw(currentIndex);
-          scrollAccumulator -= 24;
+        if (Math.abs(delta) > 1) {
+          const nextIndex = delta > 0 ? 1 : 0;
+          if (nextIndex !== currentIndex) {
+            currentIndex = nextIndex;
+            draw(currentIndex);
+          }
         }
-      } else {
-        scrollAccumulator = 0;
       }
       lastScrollY = window.scrollY;
       ticking = false;
     });
   }
 
-  images[0].src = 'assets/frames/chef-olga/frame_0001.webp';
-  images[1].src = 'assets/frames/chef-olga/frame_0002.webp';
+  function onWheel(event) {
+    if (!isSectionVisible()) return;
+    const delta = event.deltaY;
+    if (Math.abs(delta) <= 1) return;
+    const nextIndex = delta > 0 ? 1 : 0;
+    if (nextIndex !== currentIndex) {
+      currentIndex = nextIndex;
+      draw(currentIndex);
+    }
+  }
+
+  function onTouchStart(event) {
+    if (!event.touches.length) return;
+    lastScrollY = window.scrollY;
+  }
+
+  function onTouchMove() {
+    if (!isSectionVisible()) return;
+    const delta = window.scrollY - lastScrollY;
+    if (Math.abs(delta) > 1) {
+      const nextIndex = delta > 0 ? 1 : 0;
+      if (nextIndex !== currentIndex) {
+        currentIndex = nextIndex;
+        draw(currentIndex);
+      }
+      lastScrollY = window.scrollY;
+    }
+  }
+
+  images[0].src = 'assets/frames/chef-olga/frame_0008.webp';
+  images[1].src = 'assets/frames/chef-olga/frame_0121.webp';
   images.forEach(img => { img.onload = () => { loadedCount++; if (loadedCount === 1) resize(); }; });
 
   window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('wheel', onWheel, { passive: true });
+  window.addEventListener('touchstart', onTouchStart, { passive: true });
+  window.addEventListener('touchmove', onTouchMove, { passive: true });
   window.addEventListener('resize', resize);
   window.addEventListener('load', resize);
 })();
