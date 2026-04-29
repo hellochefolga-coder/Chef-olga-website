@@ -1400,13 +1400,6 @@ body {
     padding: 60px 24px 80px;
   }
 
-  .pricing-grid {
-    grid-template-columns: 1fr;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   .enquiries-section {
     padding: 72px 24px 88px;
   }

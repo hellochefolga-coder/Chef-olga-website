@@ -66,7 +66,7 @@
     let w, h;
     if (ia > ca) { h = dh; w = dh * ia; } else { w = dw; h = dw / ia; }
     const isMobile = window.innerWidth <= 720;
-    const x = isMobile ? -(w * 0.07) : (dw - w) / 2;
+    const x = isMobile ? -(w * 0.10) : (dw - w) / 2;
     const y = isMobile ? -(h - dh) * 0.85 : (dh - h) / 2;
     ctx.clearRect(0, 0, dw, dh);
     ctx.drawImage(img, x, y, w, h);
@@ -134,6 +134,7 @@
   let loadedCount = 0;
   let currentIndex = 0;
   let lastScrollY = window.scrollY;
+  let scrollAccumulator = 0;
   let ticking = false;
 
   function resize() {
@@ -174,9 +175,15 @@
     ticking = true;
     requestAnimationFrame(() => {
       if (isSectionVisible()) {
-        const scrollingDown = window.scrollY > lastScrollY;
-        const next = scrollingDown ? 1 : 0;
-        if (next !== currentIndex) { currentIndex = next; draw(currentIndex); }
+        const delta = window.scrollY - lastScrollY;
+        scrollAccumulator += Math.abs(delta);
+        while (scrollAccumulator >= 24) {
+          currentIndex = currentIndex === 0 ? 1 : 0;
+          draw(currentIndex);
+          scrollAccumulator -= 24;
+        }
+      } else {
+        scrollAccumulator = 0;
       }
       lastScrollY = window.scrollY;
       ticking = false;
