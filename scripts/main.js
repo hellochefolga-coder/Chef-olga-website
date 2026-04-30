@@ -141,6 +141,35 @@
   window.addEventListener('load', resize);
 })();
 
+// ── Pricing cards active state ────────────────────────────────────────────────
+(function () {
+  const cards = Array.from(document.querySelectorAll('.tier-list .tier'));
+  if (!cards.length) return;
+
+  function setActive(card) {
+    cards.forEach(item => item.classList.toggle('is-active', item === card));
+  }
+
+  cards.forEach((card) => {
+    card.addEventListener('click', (event) => {
+      if (event.target.closest('.tier-cta')) return;
+      setActive(card);
+    });
+
+    card.addEventListener('focus', () => setActive(card));
+
+    card.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        setActive(card);
+      }
+    });
+  });
+
+  const featuredCard = cards.find(card => card.classList.contains('tier--featured')) || cards[0];
+  setActive(featuredCard);
+})();
+
 // ── Chef Olga canvas (2 frames — toggle on scroll) ────────────────────────────
 (function () {
   const canvas = document.getElementById('chef-olga-canvas');
