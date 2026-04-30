@@ -16,7 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles/main.css?v=20260430j" />
+    <link rel="stylesheet" href="styles/main.css?v=20260430k" />
   </head>
   <body>
     <nav class="site-nav" id="site-nav" aria-label="Main navigation">
@@ -151,96 +151,76 @@
       <section class="content-section pricing-section" id="pricing" aria-label="Boards and Pricing">
         <div class="content-inner pricing-inner">
           <p class="pricing-kicker">CURATED WITH ARTISTRY</p>
-          <h2 class="pricing-title">Boards & Pricing</h2>
+          <h2 class="pricing-title">Boards &amp; Pricing</h2>
           <p class="pricing-subtitle">Thoughtfully designed boards and grazing tables, crafted with the finest ingredients and presented with style.</p>
-          
-          <div class="pricing-grid">
-            <div class="pricing-card pricing-card-shape-board">
-              <div class="board-handle" aria-hidden="true"></div>
-              <p class="pricing-card-badge">MOST POPULAR</p>
-              <h3 class="pricing-card-name">Mediterranean Grazing Board</h3>
-              <svg class="pricing-card-flourish" viewBox="0 0 80 14" aria-hidden="true">
-                <path d="M 4 7 H 30" stroke="currentColor" stroke-width="0.6" fill="none" stroke-linecap="round"/>
-                <path d="M 50 7 H 76" stroke="currentColor" stroke-width="0.6" fill="none" stroke-linecap="round"/>
-                <path d="M 40 2 C 36 4, 36 10, 40 12 C 44 10, 44 4, 40 2 Z" fill="currentColor" opacity="0.85"/>
-                <path d="M 36 7 H 44" stroke="currentColor" stroke-width="0.4"/>
-              </svg>
-              <p class="pricing-card-price">From £350</p>
-              <ul class="pricing-card-features">
-                <li>2 extra large boards</li>
-                <li>Cured meats & Italian prosciutto</li>
-                <li>Regional cheeses & Greek olives</li>
-                <li>Seasonal fruits & artisan bread</li>
-                <li>Honey, nuts & edible flower styling</li>
-              </ul>
-              <button class="pricing-card-cta" data-service="Mediterranean Grazing Board"><span>ENQUIRE</span></button>
-            </div>
 
-            <div class="pricing-card pricing-card-shape-board">
-              <div class="board-handle" aria-hidden="true"></div>
-              <p class="pricing-card-badge pricing-badge-outline">BOLD & RICH</p>
-              <h3 class="pricing-card-name">Italian Collection</h3>
-              <svg class="pricing-card-flourish" viewBox="0 0 80 14" aria-hidden="true">
-                <path d="M 4 7 H 30" stroke="currentColor" stroke-width="0.6" fill="none" stroke-linecap="round"/>
-                <path d="M 50 7 H 76" stroke="currentColor" stroke-width="0.6" fill="none" stroke-linecap="round"/>
-                <path d="M 40 2 C 36 4, 36 10, 40 12 C 44 10, 44 4, 40 2 Z" fill="currentColor" opacity="0.85"/>
-                <path d="M 36 7 H 44" stroke="currentColor" stroke-width="0.4"/>
-              </svg>
-              <p class="pricing-card-price">From £400</p>
-              <ul class="pricing-card-features">
-                <li>Italian cheeses & prosciutto</li>
-                <li>Cured meats & marinated olives</li>
-                <li>Antipasti & rustic breads</li>
-                <li>Nuts, seasonal fruits & honey</li>
+          <ul class="tier-list">
+            <li class="tier">
+              <header class="tier-head">
+                <span class="tier-tag">Most popular</span>
+                <h3 class="tier-name">Mediterranean Grazing Board</h3>
+                <p class="tier-price">from <strong>£350</strong></p>
+              </header>
+              <ul class="tier-features">
+                <li>2 extra large boards</li>
+                <li>Cured meats &amp; Italian prosciutto</li>
+                <li>Regional cheeses &amp; Greek olives</li>
+                <li>Seasonal fruits &amp; artisan bread</li>
+                <li>Honey, nuts &amp; edible flower styling</li>
+              </ul>
+              <a class="tier-cta" href="#enquiries" data-service="Mediterranean Grazing Board">Enquire</a>
+            </li>
+
+            <li class="tier">
+              <header class="tier-head">
+                <span class="tier-tag">Bold &amp; rich</span>
+                <h3 class="tier-name">Italian Collection</h3>
+                <p class="tier-price">from <strong>£400</strong></p>
+              </header>
+              <ul class="tier-features">
+                <li>Italian cheeses &amp; prosciutto</li>
+                <li>Cured meats &amp; marinated olives</li>
+                <li>Antipasti &amp; rustic breads</li>
+                <li>Nuts, seasonal fruits &amp; honey</li>
                 <li>Signature artistic styling</li>
               </ul>
-              <button class="pricing-card-cta" data-service="Italian Collection"><span>ENQUIRE</span></button>
-            </div>
+              <a class="tier-cta" href="#enquiries" data-service="Italian Collection">Enquire</a>
+            </li>
 
-            <div class="pricing-card pricing-card-shape-board pricing-card-dark">
-              <div class="board-handle" aria-hidden="true"></div>
-              <p class="pricing-card-badge pricing-badge-gold">CUSTOM EVENT</p>
-              <h3 class="pricing-card-name">Tailor Cut Catering</h3>
-              <svg class="pricing-card-flourish" viewBox="0 0 80 14" aria-hidden="true">
-                <path d="M 4 7 H 30" stroke="currentColor" stroke-width="0.6" fill="none" stroke-linecap="round"/>
-                <path d="M 50 7 H 76" stroke="currentColor" stroke-width="0.6" fill="none" stroke-linecap="round"/>
-                <path d="M 40 2 C 36 4, 36 10, 40 12 C 44 10, 44 4, 40 2 Z" fill="currentColor" opacity="0.85"/>
-                <path d="M 36 7 H 44" stroke="currentColor" stroke-width="0.4"/>
-              </svg>
-              <p class="pricing-card-price">From £25 pp</p>
-              <ul class="pricing-card-features pricing-features-light">
+            <li class="tier tier--featured">
+              <header class="tier-head">
+                <span class="tier-tag">Custom event</span>
+                <h3 class="tier-name">Tailor Cut Catering</h3>
+                <p class="tier-price">from <strong>£25</strong> <span class="tier-unit">per person</span></p>
+              </header>
+              <ul class="tier-features">
                 <li>Choice of 6 savoury items</li>
                 <li>Choice of 2 sweet items</li>
                 <li>Includes fruit platter</li>
                 <li>Grazing cones per person</li>
-                <li>Upgrade £30pp for 8 savoury & 4 sweet</li>
+                <li>Upgrade £30pp for 8 savoury &amp; 4 sweet</li>
               </ul>
-              <button class="pricing-card-cta pricing-cta-outline" data-service="Tailor Cut Catering"><span>ENQUIRE</span></button>
-            </div>
+              <a class="tier-cta tier-cta--invert" href="#enquiries" data-service="Tailor Cut Catering">Enquire</a>
+            </li>
 
-            <div class="pricing-card pricing-card-shape-board">
-              <div class="board-handle" aria-hidden="true"></div>
-              <p class="pricing-card-badge">STATEMENT PIECE</p>
-              <h3 class="pricing-card-name">Grand Grazing Table</h3>
-              <svg class="pricing-card-flourish" viewBox="0 0 80 14" aria-hidden="true">
-                <path d="M 4 7 H 30" stroke="currentColor" stroke-width="0.6" fill="none" stroke-linecap="round"/>
-                <path d="M 50 7 H 76" stroke="currentColor" stroke-width="0.6" fill="none" stroke-linecap="round"/>
-                <path d="M 40 2 C 36 4, 36 10, 40 12 C 44 10, 44 4, 40 2 Z" fill="currentColor" opacity="0.85"/>
-                <path d="M 36 7 H 44" stroke="currentColor" stroke-width="0.4"/>
-              </svg>
-              <p class="pricing-card-price">From £800</p>
-              <ul class="pricing-card-features">
+            <li class="tier">
+              <header class="tier-head">
+                <span class="tier-tag">Statement piece</span>
+                <h3 class="tier-name">Grand Grazing Table</h3>
+                <p class="tier-price">from <strong>£800</strong></p>
+              </header>
+              <ul class="tier-features">
                 <li>Full multi level table setup</li>
                 <li>Abundant Mediterranean spread</li>
-                <li>Styled with botanicals & florals</li>
-                <li>Venue delivery & setup included</li>
+                <li>Styled with botanicals &amp; florals</li>
+                <li>Venue delivery &amp; setup included</li>
                 <li>Cones available as add on</li>
               </ul>
-              <button class="pricing-card-cta" data-service="Grand Grazing Table"><span>ENQUIRE</span></button>
-            </div>
-          </div>
-          
-          <p class="pricing-footer">All boards are made to order using the freshest seasonal ingredients.<br>Pricing may vary based on size, location & custom requests.</p>
+              <a class="tier-cta" href="#enquiries" data-service="Grand Grazing Table">Enquire</a>
+            </li>
+          </ul>
+
+          <p class="pricing-footer">All boards are made to order using the freshest seasonal ingredients.<br>Pricing may vary based on size, location &amp; custom requests.</p>
         </div>
       </section>
 
@@ -383,6 +363,6 @@
       </div>
     </footer>
 
-    <script src="scripts/main.js?v=20260430j"></script>
+    <script src="scripts/main.js?v=20260430k"></script>
   </body>
 </html>
