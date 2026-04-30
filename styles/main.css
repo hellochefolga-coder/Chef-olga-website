@@ -517,17 +517,17 @@ body {
 
 @media (max-width: 720px) {
   .scroll-section {
-    min-height: 100svh;
-    height: 100svh;
+    min-height: 85svh;
+    height: 85svh;
   }
 
   .canvas-stage {
-    height: 100svh;
+    height: 85svh;
   }
 
   .canvas-frame {
-    height: 100svh;
-    min-height: 100svh;
+    height: 85svh;
+    min-height: 85svh;
   }
 
   #sequence-canvas {
@@ -536,13 +536,14 @@ body {
   }
 
   .brand-mark {
-    top: 20px;
+    top: 16px;
     left: 50%;
-    font-size: clamp(2.2rem, 9vw, 3.2rem);
+    font-size: clamp(1.8rem, 7.5vw, 2.6rem);
   }
 
   .scroll-hint {
-    bottom: 28px;
+    bottom: 22px;
+    font-size: 0.72rem;
   }
 
   .sequence-status {
