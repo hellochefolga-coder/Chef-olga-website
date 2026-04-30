@@ -184,7 +184,7 @@ body {
 }
 
 .scroll-section {
-  min-height: 250vh;
+  min-height: 150vh;
   position: relative;
   width: 100%;
   max-width: 100%;
@@ -192,7 +192,7 @@ body {
 
 .canvas-stage {
   position: relative;
-  height: 250vh;
+  height: 150vh;
   width: 100%;
   max-width: 100%;
 }
