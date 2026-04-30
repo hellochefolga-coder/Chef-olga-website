@@ -889,20 +889,21 @@ body {
 
 .tier {
   position: relative;
-  background: rgba(255, 255, 255, 0.42);
-  border: 1px solid rgba(27, 22, 18, 0.10);
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(122, 87, 40, 0.18);
   border-radius: 18px;
   padding: 24px 22px 22px;
   text-align: left;
   display: flex;
   flex-direction: column;
   gap: 18px;
+  color: #2b2218;
 }
 
 .tier--featured {
-  background: #1b1612;
-  border-color: #1b1612;
-  color: #f4eee4;
+  background: #c9a978;
+  border-color: rgba(122, 87, 40, 0.4);
+  color: #2b2218;
 }
 
 .tier-head {
@@ -919,7 +920,7 @@ body {
 }
 
 .tier--featured .tier-tag {
-  color: rgba(244, 238, 228, 0.6);
+  color: rgba(43, 34, 24, 0.6);
 }
 
 .tier-name {
@@ -939,7 +940,7 @@ body {
 }
 
 .tier--featured .tier-price {
-  color: rgba(244, 238, 228, 0.7);
+  color: rgba(43, 34, 24, 0.7);
 }
 
 .tier-price strong {
@@ -952,7 +953,7 @@ body {
 }
 
 .tier--featured .tier-price strong {
-  color: #f4eee4;
+  color: #2b2218;
 }
 
 .tier-unit {
@@ -968,6 +969,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  flex: 1;
 }
 
 .tier-features li {
@@ -990,14 +992,15 @@ body {
 }
 
 .tier-cta {
+  margin-top: auto;
   align-self: stretch;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 14px 22px;
-  background: #1b1612;
+  background: #7a5728;
   color: #f4eee4;
-  border: 1px solid #1b1612;
+  border: 1px solid #7a5728;
   border-radius: 999px;
   font-size: 0.72rem;
   letter-spacing: 0.22em;
@@ -1005,23 +1008,25 @@ body {
   text-decoration: none;
   font-weight: 500;
   cursor: pointer;
-  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 
 .tier-cta:hover {
   background: transparent;
-  color: #1b1612;
+  color: #7a5728;
+  border-color: #7a5728;
 }
 
 .tier-cta--invert {
-  background: #f4eee4;
-  color: #1b1612;
-  border-color: #f4eee4;
+  background: #2b2218;
+  color: #f4eee4;
+  border-color: #2b2218;
 }
 
 .tier-cta--invert:hover {
   background: transparent;
-  color: #f4eee4;
+  color: #2b2218;
+  border-color: #2b2218;
 }
 
 .tier-cta:focus-visible {
