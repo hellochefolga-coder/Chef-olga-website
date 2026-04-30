@@ -338,12 +338,13 @@ body {
 .chef-olga-sequence-frame {
   position: relative;
   width: 100%;
-  max-width: 420px;
-  aspect-ratio: 4 / 5;
+  max-width: 460px;
+  aspect-ratio: 2576 / 3216;
   border-radius: 0;
   background: var(--bg);
   box-shadow: none;
-  padding: 24px;
+  padding: 0;
+  overflow: hidden;
 }
 
 #chef-olga-canvas {
