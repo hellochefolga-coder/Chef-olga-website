@@ -849,7 +849,7 @@ body {
 
 /* ── Boards & Pricing — clean, mobile-first ───────────────────────────────── */
 .pricing-section {
-  padding: 40px 24px 64px;
+  padding: 40px 24px 36px;
   min-height: auto;
   background: var(--bg);
 }
@@ -881,14 +881,14 @@ body {
 .pricing-subtitle {
   font-size: clamp(1rem, 1.2vw, 1.1rem);
   color: var(--muted);
-  margin: 0 auto 44px;
+  margin: 0 auto 32px;
   max-width: 560px;
   line-height: 1.7;
 }
 
 .tier-list {
   list-style: none;
-  margin: 0 0 36px;
+  margin: 0 0 24px;
   padding: 0;
   display: grid;
   grid-template-columns: 1fr;
@@ -1053,7 +1053,7 @@ body {
 /* Tablet: 2 columns */
 @media (min-width: 640px) {
   .pricing-section {
-    padding: 48px 32px 72px;
+    padding: 48px 32px 44px;
   }
 
   .tier-list {
@@ -1069,7 +1069,7 @@ body {
 /* Desktop: 4 columns */
 @media (min-width: 1024px) {
   .pricing-section {
-    padding: 56px 48px 84px;
+    padding: 56px 48px 52px;
   }
 
   .tier-list {
@@ -1093,7 +1093,7 @@ body {
 
 .enquiries-section {
   min-height: auto;
-  padding: 72px 48px 120px;
+  padding: 40px 48px 120px;
   background: var(--bg);
 }
 
@@ -1121,14 +1121,6 @@ body {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 0 72px;
-}
-
-.reviews-kicker {
-  margin: 0 0 18px;
-  font-size: 0.8rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(141, 241, 181, 0.88);
 }
 
 .reviews-title {
@@ -1362,11 +1354,11 @@ body {
 
 @media (max-width: 640px) {
   .enquiries-section {
-    padding: 44px 24px 88px;
+    padding: 20px 24px 88px;
   }
 
   .enquiries-heading {
-    margin-bottom: 28px;
+    margin-bottom: 20px;
   }
 
   .enquiries-title {
