@@ -731,7 +731,7 @@ body {
 /* Services Section */
 .services-section {
   scroll-margin-top: 0px;
-  padding: 100px 48px 120px;
+  padding: 100px 48px 56px;
   min-height: auto;
   background: var(--bg);
 }
@@ -818,6 +818,10 @@ body {
 }
 
 @media (max-width: 720px) {
+  .services-section {
+    padding: 64px 20px 36px;
+  }
+
   .services-list-item {
     gap: 20px;
     padding: 22px 0;
@@ -829,6 +833,10 @@ body {
 }
 
 @media (max-width: 480px) {
+  .services-section {
+    padding: 52px 16px 28px;
+  }
+
   .services-list-item {
     gap: 14px;
     padding: 18px 0;
@@ -841,7 +849,7 @@ body {
 
 /* ── Boards & Pricing — clean, mobile-first ───────────────────────────────── */
 .pricing-section {
-  padding: 80px 24px 64px;
+  padding: 40px 24px 64px;
   min-height: auto;
   background: var(--bg);
 }
@@ -1045,7 +1053,7 @@ body {
 /* Tablet: 2 columns */
 @media (min-width: 640px) {
   .pricing-section {
-    padding: 96px 32px 72px;
+    padding: 48px 32px 72px;
   }
 
   .tier-list {
@@ -1061,7 +1069,7 @@ body {
 /* Desktop: 4 columns */
 @media (min-width: 1024px) {
   .pricing-section {
-    padding: 110px 48px 84px;
+    padding: 56px 48px 84px;
   }
 
   .tier-list {
@@ -1147,28 +1155,6 @@ body {
   margin: 0 auto 32px;
 }
 
-.reviews-cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 190px;
-  min-height: 56px;
-  padding: 0 28px;
-  border-radius: 999px;
-  background: #1677ff;
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 0.88rem;
-  letter-spacing: 0.04em;
-  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
-  box-shadow: 0 18px 38px rgba(8, 22, 46, 0.28);
-}
-
-.reviews-cta:hover {
-  background: #2a86ff;
-  transform: translateY(-2px);
-}
-
 @media (max-width: 720px) {
   .reviews-section {
     padding: 64px 16px 0;
@@ -1189,11 +1175,6 @@ body {
 
   .reviews-widget {
     margin-bottom: 24px;
-  }
-
-  .reviews-cta {
-    min-width: 172px;
-    min-height: 52px;
   }
 }
 
@@ -1411,7 +1392,7 @@ body {
 
 /* ── Footer ─────────────────────────────────────────────────────────────────── */
 .site-footer {
-  background: var(--text);
+  background: #24364f;
   padding: 56px 48px 40px;
   border-top: 1px solid rgba(232, 225, 216, 0.12);
 }
