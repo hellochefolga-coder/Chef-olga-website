@@ -725,29 +725,25 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     gap: 14px;
-    max-width: 100%;
-    margin: 0 0 24px;
+    max-width: 280px;
+    margin: 0 auto 24px;
     padding: 0;
+    justify-items: center;
   }
 
   .pricing-card {
-    padding: 18px 18px 18px;
-    border-radius: 10px;
-    text-align: left;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-areas:
-      "badge   badge"
-      "name    price"
-      "feats   feats"
-      "cta     cta";
-    gap: 4px 12px;
-    align-items: baseline;
+    width: 100%;
+    padding: 18px 18px 20px;
+    border-radius: 14px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .pricing-card-shape-board {
     padding-top: 18px;
-    border-radius: 10px;
+    border-radius: 14px;
     overflow: hidden;
   }
 
@@ -757,60 +753,55 @@ body {
   }
 
   .pricing-card-badge {
-    grid-area: badge;
-    font-size: 0.55rem;
+    font-size: 0.5rem;
     letter-spacing: 0.2em;
-    margin: 0 0 4px;
+    margin: 0 0 6px;
   }
 
   .pricing-card-name {
-    grid-area: name;
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     line-height: 1.2;
-    margin: 0;
-    text-align: left;
+    margin: 0 0 4px;
   }
 
   .pricing-card-price {
-    grid-area: price;
-    font-size: 1rem;
-    margin: 0;
-    text-align: right;
-    white-space: nowrap;
+    font-size: 0.9rem;
+    margin: 0 0 12px;
     font-style: italic;
   }
 
   .pricing-card-features {
-    grid-area: feats;
-    margin: 8px 0 12px;
+    margin: 0 0 14px;
+    text-align: left;
+    width: 100%;
+    flex-grow: 0;
   }
 
   .pricing-card-features li {
-    font-size: 0.78rem;
-    line-height: 1.45;
+    font-size: 0.72rem;
+    line-height: 1.4;
     margin-bottom: 3px;
-    padding-left: 14px;
+    padding-left: 12px;
   }
 
   .pricing-card-features li::before {
-    width: 8px;
-    top: 0.7em;
+    width: 7px;
+    top: 0.65em;
   }
 
   .pricing-card-features li::after {
-    left: 8px;
-    top: calc(0.7em - 1.5px);
+    left: 7px;
+    top: calc(0.65em - 1.5px);
+    width: 3px;
+    height: 3px;
   }
 
   .pricing-card-cta {
-    grid-area: cta;
     width: 100%;
     min-width: 0;
-    margin-top: 4px;
-    padding: 10px 14px;
-    font-size: 0.62rem;
-    letter-spacing: 0.2em;
-    align-self: stretch;
+    padding: 9px 12px;
+    font-size: 0.58rem;
+    letter-spacing: 0.18em;
   }
 
   .enquiries-section {
